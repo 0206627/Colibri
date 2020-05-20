@@ -1,18 +1,14 @@
 from flight_control.conop_modes import ConOp
 
 class ConOpManager:
-    status = "Default"
+
+    status = ConOp.NOMINAL
 
     def __init__(self):
         pass
 
     def get_current_conop(self):
+       return self.status
 
-        # ELEGIR QUÉ CONOP MODE CON EL CONOPHANDLERINPUT
-
-        """
-        Returns current flight con op mode.
-        :return: ConOp mode.
-        """
-        # TODO Mode handling logic
-        return ConOp.NOMINAL
+    def set_current_conop(self, conop):
+        self.status = conop
